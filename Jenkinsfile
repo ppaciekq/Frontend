@@ -58,9 +58,6 @@ pipeline {
             }
         } 
 
-
-    }
-
 		stage ('Push to Repo') {
 			steps {
 				dir('ArgoCD') {
