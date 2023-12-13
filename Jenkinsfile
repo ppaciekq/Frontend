@@ -63,7 +63,7 @@ pipeline {
 				dir('ArgoCD') {
 					withCredentials([gitUsernamePassword(credentialsId: 'git', gitToolName: 'Default')]) {
 						git branch: 'main', url: 'https://github.com/ppaciekq/ArgoCD.git'
-						sh """ cd backend
+						sh """ cd frontend
 						git config --global user.email "github-email"
 						git config --global user.name "github-name"
 						sed -i "s#$imageName.*#$imageName:$dockerTag#g" frontend-deployment.yaml
